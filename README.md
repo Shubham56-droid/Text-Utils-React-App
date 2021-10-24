@@ -1,12 +1,24 @@
 # Text Utils App Using React Project
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## About App
+
+This project is created using react js. Created by Shubham bawankar. It has multiple functionality for text editing according to user.
+
+## Install Package
+
+### `npm install`
+
+Installtion of all the necessary packeges like node modules etc on the pc.
+
+### `npm i bootstrap`
+
+Also Install bootstrap on this website or you can use Bootstrap CSS and JavaScript CDN.
 
 ## Available Scripts
 
 In the project directory, you can run:
 
-### `npm start`
+### `npm run start`
 
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
@@ -29,5 +41,4 @@ Your app is ready to be deployed!
 
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### About App
-It is a react app name as Text Utils. It has lots of functionality for conversion the text.
+
