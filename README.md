@@ -42,6 +42,11 @@ Your app is ready to be deployed!
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
 ## Images Of The WebSite
+### Light Mode
 <img src="./images/Screenshot (35).png"/>
 <img src="./images/Screenshot (36).png"/>
 <img src="./images/Screenshot (37).png"/>
+### Dark Mode
+<img src="./images/Screenshot (38).png"/>
+<img src="./images/Screenshot (39).png"/>
+<img src="./images/Screenshot (40).png"/>
