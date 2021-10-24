@@ -10,44 +10,77 @@ export default function TextForm(props) {
   }
 
   const handleUpChange = () =>{
-    // console.log("you have clicked on uppercase");
-    let newUppertext = text.toUpperCase();
-    setText(newUppertext);
+    if( text != '')
+    {
+      let newUppertext = text.toUpperCase();
+      setText(newUppertext);
+      props.showAlert("Converted to Uppercase","success");
+    }
+    else
+    {
+      props.showAlert("There's Nothing To UpperCase Into TextBox","warning");
+    }
   }
 
   const handleLoChange = () => {
     // console.log("you have clicked on lowercase");
-    let newLowertext = text.toLowerCase();
-    setText(newLowertext);
+    if( text != '')
+    {
+      let newLowertext = text.toLowerCase();
+      setText(newLowertext);
+      props.showAlert("Converted to Lowercase","success");
+    }
+    else
+    {
+      props.showAlert("There's Nothing To LowerCase Into TextBox","warning");
+    }
+    
   }
 
   const handleClear = () => {
     //   console.log("You have clicked on clear");
+    if(text != '')
+    {
       let cleartext = "";
       setText(cleartext);
-  }
-
-  const handleOnChangeAlert = () => {
-      alert("You cannot make changes in preview");
-  }
-
-  const handlecopyfunction = () => {
-    var copyText = document.getElementById("text");
-    copyText.select();
-    navigator.clipboard.writeText(copyText.value);
-    if(copyText.value != '')
-    {
-      alert("Copied the text: " + copyText.value);
+      props.showAlert("Cleared the whole text","danger");
     }
     else
     {
-      alert('Pls write some text into textbox');
-    } 
+      props.showAlert("There's Nothing To Clear Into TextBox","warning");
+    }
+  }
+
+  const handleOnChangeAlert = () => {
+      props.showAlert("You cannot make changes into preview","warning");
+  }
+
+  const handlecopyfunction = () => {
+    if(text != '')
+    {
+      var copyText = document.getElementById("text");
+      copyText.select();
+      navigator.clipboard.writeText(copyText.value);
+      props.showAlert("Copied the text : "+ copyText.value, "success");
+    }
+    else
+    {
+      props.showAlert("There's Nothing To Copy Into TextBox","warning");
+    }
+    
   }
 
   const handleExtraspaces = () => {
-    let newText = text.split(/[ ]+/);
-    setText(newText.join(" "))
+    if(text != '')
+    {
+      let newText = text.split(/[ ]+/);
+      setText(newText.join(" "));
+      props.showAlert("All extra spaces are cleared","success");
+    }
+    else
+    {
+      props.showAlert("There's Nothing Remove Spaces Into TextBox","warning");
+    }
   }
 
 
@@ -82,7 +115,10 @@ export default function TextForm(props) {
 
 
   return (
+    
+
     <div className="main">
+     
     <div className="container my-5">
         <h1 className="text-center" style={props.mode==='dark'?style2dark:style2light}>{props.heading}</h1>
       <div className="mb-3 my-3" >
