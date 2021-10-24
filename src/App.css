@@ -33,12 +33,4 @@ body
   padding-top: 15px;
 }
 
-.butt
-{
-  position: relative;
-  height: 100px;
-  margin-top: 30px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
+
