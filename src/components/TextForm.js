@@ -10,7 +10,7 @@ export default function TextForm(props) {
   }
 
   const handleUpChange = () =>{
-    if( text != '')
+    if( text !== '')
     {
       let newUppertext = text.toUpperCase();
       setText(newUppertext);
@@ -24,7 +24,7 @@ export default function TextForm(props) {
 
   const handleLoChange = () => {
     // console.log("you have clicked on lowercase");
-    if( text != '')
+    if( text !== '')
     {
       let newLowertext = text.toLowerCase();
       setText(newLowertext);
@@ -39,7 +39,7 @@ export default function TextForm(props) {
 
   const handleClear = () => {
     //   console.log("You have clicked on clear");
-    if(text != '')
+    if(text !== '')
     {
       let cleartext = "";
       setText(cleartext);
@@ -52,11 +52,11 @@ export default function TextForm(props) {
   }
 
   const handleOnChangeAlert = () => {
-      props.showAlert("You cannot make changes into preview","warning");
+      alert("Cannot edit in preview");
   }
 
   const handlecopyfunction = () => {
-    if(text != '')
+    if(text !== '')
     {
       var copyText = document.getElementById("text");
       copyText.select();
@@ -71,7 +71,7 @@ export default function TextForm(props) {
   }
 
   const handleExtraspaces = () => {
-    if(text != '')
+    if(text !== '')
     {
       let newText = text.split(/[ ]+/);
       setText(newText.join(" "));
@@ -134,18 +134,18 @@ export default function TextForm(props) {
           onChange={handleOnChange}
         ></textarea>
       </div>
-      <button className="btn btn-primary" onClick={handleUpChange}>Convert Uppercase</button>
-      <button className="btn btn-primary mx-3" onClick={handleLoChange}>Convert LowerCase</button>
-      <button className="btn btn-danger" onClick={handleClear}>Clear Text</button>
-      <button className="btn btn-success mx-3" onClick={handlecopyfunction}>Copy To Clipboard</button>
-      <button className="btn btn-primary" onClick={handleExtraspaces}>Remove Extra Spaces</button>
+      <button disabled={text.length===0}  className="btn btn-primary mx-1 my-1" onClick={handleUpChange}>Convert Uppercase</button>
+      <button disabled={text.length===0}  className="btn btn-primary mx-1 my-1" onClick={handleLoChange}>Convert LowerCase</button>
+      <button disabled={text.length===0}  className="btn btn-danger  mx-1 my-1" onClick={handleClear}>Clear Text</button>
+      <button disabled={text.length===0}  className="btn btn-success mx-1 my-1" onClick={handlecopyfunction}>Copy To Clipboard</button>
+      <button disabled={text.length===0}  className="btn btn-primary mx-1 my-1" onClick={handleExtraspaces}>Remove Extra Spaces</button>
      
     </div>
-    <div className="container my-2 " style={props.mode==='dark'?style2dark:style2light}>
+    <div className="container my-4 " style={props.mode==='dark'?style2dark:style2light}>
         <h1>{props.summaryHead}</h1>
-        <p>Nummber of words : {text.split(' ').length-1}</p>
+        <p>Nummber of words : {text.split(" ").filter((element)=>{return element.length!==0}).length}</p>
         <p>Number of charecters : {text.length}</p>
-        <p>Reading Time: {0.008 * (text.split(' ').length-1)}</p>
+        <p>Reading Time: {0.008 * (text.split(' ').filter((element)=>{return element.length!==0}).length)}</p>
         <h3 className="text-center">Preview Document</h3>
         <div className="content">
         <textarea

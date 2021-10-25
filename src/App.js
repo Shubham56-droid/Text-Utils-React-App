@@ -6,7 +6,7 @@ import About from "./components/About.js";
 import TextForm from "./components/TextForm.js";
 import Alert from "./components/Alert.js";
 import Contact from "./components/Contact";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 function App() {
   const [mode, setMode] = useState("light");
@@ -33,13 +33,13 @@ function App() {
       document.body.style.background =
         "linear-gradient(45deg, rgb(241, 241, 241) 50%, rgb(158, 232, 255) 50%)";
       showAlert("Light mode has been enabled", "success");
-      document.title = "TextUtils - Light Mode";
+      // document.title = "TextUtils - Light Mode";
     } else {
       setMode("dark");
       document.body.style.background =
         "linear-gradient(45deg, rgb(92, 92, 92) 50%, rgb(27, 27, 27) 50%)";
       showAlert("Dark mode has been enabled", "success");
-      document.title = "TextUtils - Dark Mode";
+      // document.title = "TextUtils - Dark Mode";
 
       /* -------agar title chamkana ho evil app banane  ke liye setInterval-------*/
       // setInterval(() => {
@@ -62,15 +62,15 @@ function App() {
       />
       <Alert alert={alert} />
       <Switch>
-        <Route path="/about">
+        <Route exact path="/about">
           <About mode={mode}/>
         </Route>
-        <Route path="/contact">
+        <Route exact path="/contact">
           <Contact mode={mode}/>
         </Route>
-        <Route path="/">
+        <Route exact path="/">
             <TextForm
-            heading="Text Analysis And Convertor"
+            heading="TextUtis - Word Counter, Charecter Counter, Remove Extra Space"
             summaryHead="Summery Of Your Text"
             mode={mode}
             showAlert={showAlert}

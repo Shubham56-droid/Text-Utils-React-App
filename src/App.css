@@ -33,4 +33,8 @@ body
   padding-top: 15px;
 }
 
-
+.AlertBox
+{
+  min-height: 90px;
+  background-color: transparent;
+}
