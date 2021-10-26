@@ -1,6 +1,6 @@
 # Text Utils App Using React Project
 
-visit webpage here : <a href="https://competent-snyder-f076c6.netlify.app/">click here</a>
+visit webpage here : <a href="https://competent-snyder-f076c6.netlify.app/" target="_blank">click here</a>
 
 ## About App
 
